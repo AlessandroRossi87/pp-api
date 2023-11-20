@@ -26,10 +26,10 @@ class PlantSerializer(serializers.ModelSerializer):
         return request.user == obj.owner
 
     class Meta:
-        model = Post
+        model = Plant
         fields = [
             'id', 'owner', 'is_owner', 'profile_id',
             'profile_image', 'created_at', 'updated_at',
             'title', 'description', 'image', 'plant_children',
-            'requested_children', 'taxonomy',
+            'requested_children', 'taxonomy_choices',
         ]
