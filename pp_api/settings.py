@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'reactions',
     'followers',
     'plant_requests',
+    'contact',
 ]
 
 MIDDLEWARE = [

@@ -13,4 +13,4 @@ class PlantRequest(models.Model):
         ordering = ['-request_date']
 
     def __str__(self):
-        return f'{self.requester} - {self.plant} - {self.request_date} - Approved: {self.is_approved}'
+        return f'{self.requester} {self.plant} {self.request_date} Approved: {self.is_approved}'
