@@ -2,7 +2,7 @@ from rest_framework import generics, permissions
 from plants.models import Plant
 from .models import PlantRequest
 from .serializers import PlantRequestSerializer
-from .permissions import IsOwnerOrReadOnly
+from pp_api.permissions import IsOwnerOrReadOnly
 
 
 class NewPlantRequest(generics.CreateAPIView):
@@ -21,5 +21,5 @@ class ApprovePlantRequest(generics.UpdateAPIView):
     def perform_update(self, serializer):
         serializer.save(is_approved=True)
         plant_request = PlantRequest.objects.get(pk=self.kwargs['pk'])
-        plant_request.plant.requested_children += 1
+        plant_request.plant.plant_children -= 1
         plant_request.plant.save()
