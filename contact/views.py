@@ -5,7 +5,7 @@ from rest_framework import status
 from .models import Contact
 from .serializers import ContactSerializer, ContactFormSerializer
 
-class ContactListCreateView(generics.ListCreateAPIView):
+class ContactView(generics.ListCreateAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
     permission_classes = [IsAuthenticated]
