@@ -60,7 +60,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['8000-alessandrorossi8-ppapi-ogvveuooiuv.ws-eu106.gitpod.io', 'plant-parenthood-pp5.herokuapp.com']
+ALLOWED_HOSTS = ['8000-alessandrorossi8-ppapi-ogvveuooiuv.ws-eu106.gitpod.io', 'plant-parenthood-pp5-ac00fe42de7c.herokuapp.com']
 
 
 # Application definition
