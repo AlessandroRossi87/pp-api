@@ -63,7 +63,6 @@ class Plant(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
     plant_children = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(10)])
-    requested_children = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(1)])
     image = models.ImageField(
         upload_to='images/', default='../default_post_ecbbyj.jpg', blank=True
     )

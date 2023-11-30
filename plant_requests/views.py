@@ -1,13 +1,16 @@
 from rest_framework import generics, permissions
+from django_filters.rest_framework import DjangoFilterBackend
 from plants.models import Plant
 from .models import PlantRequest
 from .serializers import PlantRequestSerializer
 from pp_api.permissions import IsOwnerOrReadOnly
 
 
-class NewPlantRequest(generics.CreateAPIView):
+class NewPlantRequest(generics.ListCreateAPIView):
     serializer_class = PlantRequestSerializer
     permission_classes = [permissions.IsAuthenticated]
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['plant']
 
     def perform_create(self, serializer):
         plant_id = self.kwargs['plant_id']

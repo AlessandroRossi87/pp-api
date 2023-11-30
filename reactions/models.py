@@ -7,7 +7,7 @@ class Reaction(models.Model):
     reactions = [
         (1, 'Hydrate'),
         (2, 'Moist'),
-        (3, 'Drought'),
+        (3, 'Dry'),
     ]
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     plant = models.ForeignKey(
