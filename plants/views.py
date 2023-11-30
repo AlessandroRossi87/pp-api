@@ -4,7 +4,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from pp_api.permissions import IsOwnerOrReadOnly
 from .models import Plant
 from reactions.models import Reaction
-from .serializers import PlantSerializer
+from .serializers import PlantSerializer, TaxonomyChoiceSerializer
 
 
 class PlantList(generics.ListCreateAPIView):
@@ -43,3 +43,9 @@ class PlantDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Plant.objects.annotate(
         comments_count=Count('comment', distinct=True)
     ).order_by('-created_at')
+
+class TaxonomyChoices(APIView):
+    def get(self, request, *args, **kwargs):
+        taxonomy_choices = Plant.get_taxonomy_choices()
+        serializer = TaxonomyChoiceSerializer(taxonomy_choices, many=True)
+        return Response({'taxonomy_choices': serializer.data})
