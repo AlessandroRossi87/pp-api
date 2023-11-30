@@ -4,7 +4,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from pp_api.permissions import IsOwnerOrReadOnly
 from .models import Plant
 from reactions.models import Reaction
-from .serializers import PlantSerializer, TaxonomyChoiceSerializer
+from .serializers import PlantSerializer
 from rest_framework.response import Response
 
 
