@@ -37,5 +37,5 @@ class PlantSerializer(serializers.ModelSerializer):
         ]
 
 class TaxonomyChoiceSerializer(serializers.Serializer):
-    value = serializers.CharField()
-    label = serializers.CharField()
+    value = serializers.CharField(source='0')
+    label = serializers.CharField(source='1') 
