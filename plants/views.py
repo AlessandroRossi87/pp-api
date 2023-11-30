@@ -46,6 +46,6 @@ class PlantDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class TaxonomyChoices(generics.CreateAPIView):
     def get(self, request, *args, **kwargs):
-        taxonomy_choices = Plant.taxonomy_choices()
+        taxonomy_choices = Plant.taxonomy_choices
         serializer = TaxonomyChoiceSerializer(taxonomy_choices, many=True)
         return Response({'taxonomy_choices': serializer.data})
