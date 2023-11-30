@@ -5,6 +5,7 @@ from pp_api.permissions import IsOwnerOrReadOnly
 from .models import Plant
 from reactions.models import Reaction
 from .serializers import PlantSerializer, TaxonomyChoiceSerializer
+from rest_framework.response import Response
 
 
 class PlantList(generics.ListCreateAPIView):
