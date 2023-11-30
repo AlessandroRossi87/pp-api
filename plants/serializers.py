@@ -35,7 +35,3 @@ class PlantSerializer(serializers.ModelSerializer):
             'title', 'description', 'image', 'plant_children', 
             'taxonomy_choices', 'comments_count',
         ]
-
-class TaxonomyChoiceSerializer(serializers.Serializer):
-    value = serializers.CharField(source='0')
-    label = serializers.CharField(source='1') 

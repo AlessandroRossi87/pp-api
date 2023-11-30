@@ -45,8 +45,7 @@ class PlantDetail(generics.RetrieveUpdateDestroyAPIView):
         comments_count=Count('comment', distinct=True)
     ).order_by('-created_at')
 
-class TaxonomyChoices(generics.CreateAPIView):
+class TaxonomyChoicesView(APIView):
     def get(self, request, *args, **kwargs):
-        taxonomy_choices = Plant.taxonomy_choices
-        serializer = TaxonomyChoiceSerializer(taxonomy_choices, many=True)
-        return Response({'taxonomy_choices': serializer.data})
+        taxonomy_choices = [{'value': value, 'label': label} for value, label in Plant.taxonomy]
+        return Response(taxonomy_choices)
