@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Plant
 from reactions.models import Reaction
-from PIL import Image
+from Pillow import Image
 
 
 class PlantSerializer(serializers.ModelSerializer):
