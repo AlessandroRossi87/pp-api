@@ -12,7 +12,7 @@ class PlantSerializer(serializers.ModelSerializer):
     comments_count = serializers.ReadOnlyField()
 
     def validate_image(self, value):
-        if size > 2 * 1024 * 1024:
+        if value.size > 2 * 1024 * 1024:
             raise serializers.ValidationError('Image size larger than 2MB!')
 
         image = Image.open(value)
