@@ -64,7 +64,7 @@ class Plant(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
     plant_children = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(10)])
-    image = models.CloudinaryField(
+    image = CloudinaryField(
         'image', default='../default_post_ecbbyj.jpg', blank=True
     )
     taxonomy_choices = models.CharField(
