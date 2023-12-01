@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator
+from cloudinary.models import CloudinaryField
 
 
 class Plant(models.Model):
@@ -63,8 +64,8 @@ class Plant(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
     plant_children = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(10)])
-    image = models.ImageField(
-        upload_to='images/', default='../default_post_ecbbyj.jpg', blank=True
+    image = models.CloudinaryField(
+        'image', default='../default_post_ecbbyj.jpg', blank=True
     )
     taxonomy_choices = models.CharField(
         max_length=32, choices=taxonomy, default=None
