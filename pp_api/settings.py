@@ -108,7 +108,7 @@ MIDDLEWARE = [
 
 if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
-        os.environ.get('CLIENT_ORIGIN')
+        'https://3000-alessandror-plantparent-vyopynkn999.ws-eu106.gitpod.io',
     ]
 
 if 'CLIENT_ORIGIN_DEV' in os.environ:
