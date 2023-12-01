@@ -11,7 +11,9 @@ class PlantSerializer(serializers.ModelSerializer):
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     comments_count = serializers.ReadOnlyField()
-    reactions = ReactionSerializer(many=True, read_only=True)
+    hydrate_count = serializers.ReadOnlyField()
+    moist_count = serializers.ReadOnlyField()
+    dry_count = serializers.ReadOnlyField()
 
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
@@ -40,5 +42,6 @@ class PlantSerializer(serializers.ModelSerializer):
             'id', 'owner', 'is_owner', 'profile_id',
             'profile_image', 'created_at', 'updated_at',
             'title', 'description', 'image', 'plant_children', 
-            'taxonomy_choices', 'comments_count', 'reactions',
+            'taxonomy_choices', 'comments_count', 'hydrate_count',
+            'moist_count', 'dry_count',
         ]
