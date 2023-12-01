@@ -18,11 +18,11 @@ class PlantSerializer(serializers.ModelSerializer):
         image = Image.open(value)
         width, height = image.size
 
-        if value.height > 4096:
+        if height > 4096:
             raise serializers.ValidationError(
                 'Image height larger than 4096px!'
             )
-        if value.width > 4096:
+        if width > 4096:
             raise serializers.ValidationError(
                 'Image width larger than 4096px!'
             )
