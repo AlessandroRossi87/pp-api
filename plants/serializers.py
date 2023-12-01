@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Plant
 from reactions.models import Reaction
+from PIL import Image
 
 
 class PlantSerializer(serializers.ModelSerializer):
@@ -13,6 +14,10 @@ class PlantSerializer(serializers.ModelSerializer):
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
             raise serializers.ValidationError('Image size larger than 2MB!')
+
+        image = Image.open(value)
+        width, height = image.size
+
         if value.height > 4096:
             raise serializers.ValidationError(
                 'Image height larger than 4096px!'
