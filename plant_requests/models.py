@@ -14,3 +14,17 @@ class PlantRequest(models.Model):
 
     def __str__(self):
         return f'{self.requester} {self.plant} {self.request_date} Approved: {self.is_approved}'
+
+    def save(self, *args, **kwargs):
+        if self.is_approved:
+            self._decrement_plant_children()
+        
+        super().save(*args, **kwargs)
+
+    def _decrement_plant_children(self):
+        plant = self.plant
+        if plant.plant_children > 0:
+            plant.plant_children -= 1
+            plant.save()
+        else:
+            raise ValueError("No more plant children available.")
