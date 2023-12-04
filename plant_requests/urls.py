@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import NewPlantRequest, ApprovePlantRequest, DenyPlantRequest,
+from .views import NewPlantRequest, ApprovePlantRequest, DenyPlantRequest
 
 
 urlpatterns = [
