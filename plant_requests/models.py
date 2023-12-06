@@ -4,8 +4,8 @@ from plants.models import Plant
 
 
 class PlantRequest(models.Model):
-    requester = models.ForeignKey(User, on_delete=models.CASCADE, related_name='plant_requests')
-    plant = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name='plant_requests')
+    requester = models.ForeignKey(User, on_delete=models.CASCADE)
+    plant = models.ForeignKey(Plant, on_delete=models.CASCADE)
     request_date = models.DateTimeField(auto_now_add=True)
     is_approved = models.BooleanField(default=False)
 
