@@ -409,7 +409,7 @@ This line is used to instruct heroku that the GOOGLE_CREDENTIALS var is called g
 
 **Heroku**
 
-1. Log in to heroku and open the boody-doodle-api app
+1. Log in to heroku and open the pp-api app
 2. Click settings
 3. Click Config vars
 4. Add the following variables:

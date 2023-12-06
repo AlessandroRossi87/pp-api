@@ -8,6 +8,7 @@ from pp_api.permissions import IsOwnerOrReadOnly
 
 
 class NewPlantRequest(generics.ListCreateAPIView):
+    queryset = PlantRequest.objects.all()
     serializer_class = PlantRequestSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [DjangoFilterBackend]
@@ -18,7 +19,7 @@ class NewPlantRequest(generics.ListCreateAPIView):
         plant = Plant.objects.get(pk=plant_id)
 
         if plant.plant_children > 0:
-            serializer.save(requester=self.request.user, plant=plant)
+            serializer.save(requester=self.request.user)
             plant.plant_children -= 1
             plant.save()
         else:
