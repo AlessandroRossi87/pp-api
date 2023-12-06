@@ -42,3 +42,11 @@ class DenyPlantRequest(generics.UpdateAPIView):
         serializer.save(is_approved=False)
 
         return Response({"detail": "Request denied."})
+
+class RequestList(generics.ListAPIView):
+    serializer_class = PlantRequestSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+
+        return PlantRequest.objects.filter(requester=self.request.user.profile)
