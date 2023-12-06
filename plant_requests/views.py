@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
@@ -5,6 +6,7 @@ from plants.models import Plant
 from .models import PlantRequest
 from .serializers import PlantRequestSerializer
 from pp_api.permissions import IsOwnerOrReadOnly
+from django.shortcuts import get_object_or_404
 
 
 class NewPlantRequest(generics.ListCreateAPIView):
@@ -19,11 +21,11 @@ class NewPlantRequest(generics.ListCreateAPIView):
         plant = Plant.objects.get(pk=plant_id)
 
         if plant.plant_children > 0:
-            serializer.save(requester=self.request.user)
+            serializer.save(requester=self.request.user, plant_owner=plant.owner.id)
             plant.plant_children -= 1
             plant.save()
         else:
-            return Response({"detail": "Unfortunately there are no plant children available."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"detail": "Unfortunately, there are no plant children available."}, status=status.HTTP_400_BAD_REQUEST)
 
 class ApprovePlantRequest(generics.UpdateAPIView):
     serializer_class = PlantRequestSerializer
@@ -48,5 +50,7 @@ class RequestList(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
+        user_id = self.kwargs['user_id']
+        user = get_object_or_404(User, pk=user_id)
 
-        return PlantRequest.objects.filter(requester=self.request.user.profile)
+        return PlantRequest.objects.filter(requester=user)
