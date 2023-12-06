@@ -1,24 +1,27 @@
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from rest_framework import status
+from django.core.exceptions import PermissionDenied
 from .models import Contact
 from .serializers import ContactSerializer, ContactFormSerializer
 
 class ContactView(generics.ListCreateAPIView):
-    queryset = Contact.objects.all()
     serializer_class = ContactSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_staff:
+            return Contact.objects.all()
+        else:
+            return Contact.objects.filter(owner=user)
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
-        
 
-    def post(self, request, *args, **kwargs):
-        form_serializer = ContactFormSerializer(data=request.data)
-        if form_serializer.is_valid():
-            contact_serializer = ContactSerializer(data=form_serializer.validated_data)
-            if contact_serializer.is_valid():
-                contact_serializer.save(owner=request.user)
-                return Response(contact_serializer.data, status=status.HTTP_201_CREATED)
-        return Response(form_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def list(self, request, *args, **kwargs):
+        if not request.user.is_staff:
+            return Response({'detail': 'You do not have permission to access this resource.'}, status=status.HTTP_403_FORBIDDEN)
+
+        return super().list(request, *args, **kwargs)
