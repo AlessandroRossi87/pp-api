@@ -118,6 +118,8 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
 
 CORS_ALLOW_CREDENTIALS = True
 
+CORS_ALLOWED_ORIGINS = ["https://plant-parenthood-react-98e49af91903.herokuapp.com",]
+
 ROOT_URLCONF = 'pp_api.urls'
 
 TEMPLATES = [
