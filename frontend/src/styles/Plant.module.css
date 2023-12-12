@@ -1,0 +1,48 @@
+.Plant {
+    background-color: #ffffff;
+    border: 1px solid #dadadf;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .Plant figure,
+  h5 {
+    margin: 0 0;
+  }
+  
+  .Hydrate {
+    color: rgb(66, 230, 66);
+  }
+  
+  .Hydrate:hover {
+    color: rgb(6, 103, 6);
+  }
+  
+  .HydrateOutline:hover {
+    color: rgb(0, 43, 0);
+  }
+
+  .Moist {
+    color: orange;
+  }
+  
+  .Moist:hover {
+    color: rgb(174, 114, 2);
+  }
+  
+  .MoistOutline:hover {
+    color: rgb(85, 56, 1);
+  }
+
+  .Dry {
+    color: #f85032;
+  }
+  
+  .Dry:hover {
+    color: #b52005;
+  }
+  
+  .DryOutline:hover {
+    color: #641102;
+  }
