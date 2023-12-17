@@ -135,7 +135,7 @@ const Plant = (props) => {
             </OverlayTrigger>
           ) : currentUser ? (
             <span onClick={handleHydrate}>
-              <i className={`fa-solid fa-shower ${styles.HydrateOutline}`} />
+              <i className={`fa-solid fa-shower ${styles.Hydrate}`} />
             </span>
           ) : (
             <OverlayTrigger
@@ -155,7 +155,7 @@ const Plant = (props) => {
             </OverlayTrigger>
           ) : currentUser ? (
             <span onClick={handleMoist}>
-              <i className={`fa-solid fa-faucet-drip ${styles.MoistOutline}`} />
+              <i className={`fa-solid fa-faucet-drip ${styles.Moist}`} />
             </span>
           ) : (
             <OverlayTrigger
@@ -175,7 +175,7 @@ const Plant = (props) => {
             </OverlayTrigger>
           ) : currentUser ? (
             <span onClick={handleDry}>
-              <i className={`fa-solid fa-sun-plant-wilt ${styles.DryOutline}`} />
+              <i className={`fa-solid fa-sun-plant-wilt ${styles.Dry}`} />
             </span>
           ) : (
             <OverlayTrigger
