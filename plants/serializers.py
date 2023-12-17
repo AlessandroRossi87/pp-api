@@ -41,7 +41,7 @@ class PlantSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'is_owner', 'profile_id',
             'profile_image', 'created_at', 'updated_at',
-            'title', 'description', 'image', 'plant_children', 
-            'taxonomy_choices', 'comments_count', 'hydrate_count',
+            'title', 'description', 'image', 'taxonomy_choices', 
+            'comments_count', 'hydrate_count',
             'moist_count', 'dry_count',
         ]

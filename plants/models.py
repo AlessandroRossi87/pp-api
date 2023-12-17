@@ -63,7 +63,6 @@ class Plant(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
-    plant_children = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(10)])
     image = CloudinaryField(
         'image', default='../default_post_ecbbyj.jpg', blank=True
     )
