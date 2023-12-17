@@ -99,28 +99,6 @@ const Plant = (props) => {
     }
   };
 
-  const handlePlantRequest = async () => {
-    try {
-      console.log('icurrentUser:', currentUser);
-      const requestData = {
-        plant: id,
-        requester: currentUser.profile_id,
-        request_date: new Date().toISOString(),
-        is_approved: false,
-      };
-
-      console.log('Request Data:', requestData);
-      console.log('Axios Request Config:', axiosReq.post);
-
-      const response = await axiosReq.post(`/plants/${id}/request/`, requestData);
-      const newPlantRequest = response.data;
-  
-      console.log('Plant request created successfully:', newPlantRequest);
-    } catch (error) {
-      console.error('Error creating plant request:', error.response.data);
-    }
-  };
-
   return (
     <Card className={styles.Plant}>
       <Card.Body>
