@@ -1,6 +1,6 @@
 # Plant Parenthood API
 
-Plant Parenthood API is the backend service used by the [Plant Parenthood Application](https://github.com/AlessandroRossi87/plant-parenthood).
+Plant Parenthood API is the backend service used by the [Plant Parenthood Application](https://github.com/AlessandroRossi87/plant-parenthood). In order to ensure a smooth 
 <hr>
 <br>
 
