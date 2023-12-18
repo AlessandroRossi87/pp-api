@@ -4,26 +4,6 @@ Plant Parenthood API is the backend service used by the [Plant Parenthood Applic
 <hr>
 <br>
 
-## Table of Contents
-* [Development Goals](#Development-Goals)
-* [Agile Planning](#Agile-Planning)
-    * [Epics](#Epics)
-    * [User Stories](#User-Stories)
-* [API End Points](#API-End-Points)
-* [Future Features](#Features-Left-to-Implement)
-* [Database Design](#Database-Design)
-* [Security](#Security)
-* [Technologies](#Technologies)
-* [Testing](#Testing)
-* [Deployment](#Deployment)
-    * [Version Control](#Version-Control)
-    * [Heroku Deployment](#Heroku-Deployment)
-    * [GCP](#Google-Cloud-Platform)
-    * [Run Locally](#Run-Locally)
-    * [Fork Project](#Fork-Project)
-* [Credits](#Credits)
-  * [Content](#Content)
-  * [Acknowledgements](#Acknowledgements)
 
 ## Development Goals
 
@@ -31,195 +11,12 @@ The goal of this API is provide a backend service to allow the Plant Parenthood 
 <hr>
 <br>
 
-## Agile Planning
-
-This project was developed using agile methodologies by delivering small features in incremental sprints. There were 3 sprints in total, spaced out evenly over three weeks.
-
-All stories were assigned to epics, prioritized under the labels, Must have, should have, could have and assigned to sprints. "Must have" stories were completed first, "should haves" and then finally "could haves". It was done this way to ensure that all core requirements were completed first to give the project a complete feel, with the nice to have features being added should there be capacity.
-
-The Kanban board was created using github projects and can be located [here](xxxx) and can be viewed to see more information on the project cards. All stories except the documentation tasks have a full set of acceptance criteria in order to define the functionality that marks that story as complete.
-
-![Kanban](xxx)
-
-### Epics
-
-**Authentications**
-
-This Epic covers all API endpoint creation and database connections relating authentication activities.
-
-**Navigation**
-
-This Epic covers all API endpoint creation and database connections relating to the CRUD functionality of user posts. This includes like activity.
-
-**Comments**
-
-This Epic covers all API endpoint creation and database connections relating to the CRUD functionality of user comments in relation to posts.
-
-**Profiles**
-
-This Epic covers all API endpoint creation and database connections relating to the CRUD functionality of user created profiles. This includes following functionality.
-
-**Artists**
-
-This Epic covers all API endpoint creation and database connections relating to the CRUD functionality of users who register as Artists.
-
-**Reviews**
-
-This Epic covers all API endpoint creation and database connections relating to the CRUD functionality of Artist reviews and average rating as displayed on user profile.
-<hr>
-<br>
-
-### User Stories
-
-**By Epics** 
-
-**Setup**
-
-* As a developer, I need to create the base project set up so that I can build out the features.
-
-* As a developer, I need to create the google cloud bucket and create the connection to the project so that static images can be uploaded by users.
-
-* As a user I can create a new account so that I can access all the features for signed up users
-
-**Artists**
-
-* As a developer, I want to create api views for artists so that they are available to the front end
-
-**Contact**
-
-* As a developer, I want to create a contact model and API view so that users can contact the site owner with issues
-
-**Posts**
-
-* As a user, I want to be able to view edit or delete a post
-* As a user, I want to able to create a post and list posts
-
-**Profiles**
-
-* As a developer, I want to create a new blank profile with default image when a user is created.
-* As a user, I want to able to get a list of profiles
-
-### API Endpoints
-
-User Story:
-
-`As a developer, I need to create the base project set up so that I can build out the features.`
-
-Implementation:
-
-The base project was created and a virtual environment created with all neccessary packages installed and frozen into the requirements.
-
-The settings were also edited to hide any secret variables and set dev and production environments apart.
-
-User Story:
-
-`As a developer, I need to create the google cloud bucket and create the connection to the project so that static images can be uploaded by users.`
-
-Implementation:
-
-A google cloud bucket was created and a service account created to allow image uploads via the service account. Create and read IAM roles were givent to the service account to ensure it had only the minimum required permissions.
-
-
-User Story:
-
-`As a user I can create a new account so that I can access all the features for signed up users`
-
-Implementation:
-
-Django rest framework and dj_rest_auth were installed and added to the url patterns and site packages to make use of their built in authentication system.
-
-User Story:
-
-`As a developer, I want to create api views for artists so that they are available to the front end`
-
-Implementation:
-
-Endpoint: /artists/
-
-Methods:
-* POST - Used to create an artist
-* GET - Used to retrieve a list of artists
-
-Endpoint: /artists/<int:pk>/
-
-Methods:
-* GET - Used to view single artist profile
-* PUT - Used to update an artist profile
-* DELETE - Used to delete an artist profile
-
-User Story:
-
-`As a developer, I want to create a contact model and API view so that users can contact the site owner with issues`
-
-Implementation:
-
-Endpoint: /contacts/
-
-Methods:
-* POST - Used to create contact request
-* GET - Used to get a list of contact requests
-
-Endpoint: /contacts/<int:pk>/
-
-Methods:
-* GET - Get a single contact request
-* PUT - Used to update a single contact request
-* DELETE - Used to delete a contact request
-
-User Story:
-
-`As a user, I want to be able to view edit or delete a post`
-
-`As a user, I want to able to create a post and list posts`
-
-Implementation:
-
-Endpoint: /posts/
-
-Methods:
-* POST - Used to create post
-* GET - Used to get a list of posts
-
-Endpoint: /posts/<int:pk>/
-
-Methods:
-* GET - Get a single post
-* PUT - Used to update a single post
-* DELETE - Used to delete a post
-
-
-User Story:
-
-`As a developer, I want to create a new blank profile with default image when a user is created.`
-
-Implementation:
-
-In the profiles app, a signal was created in order to create a new user profile on signup.
-
-
-User Story:
-
-`As a user, I want to able to get a list of profiles`
-
-Implementation:
-
-Endpoint: /profiles/
-
-Methods:
-* POST - Used to create post
-* GET - Used to get a list of posts
-
-Endpoint: /profiles/<int:pk>/
-
-Methods:
-* GET - Get a single profile
-* PUT - Used to update a single profile
-* DELETE - Used to delete a profile
-
-
 ## Database Design
 
-![ER Diagram](xxx)
+The database design includes the originally planned "Requests" model and the "plant_children" and "requested_children" from the Plants model. These were excluded in the final version but retained in this README for reference to future implementation.
+
+![Database](https://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/database.png)
+
 
 ## Security
 
@@ -317,14 +114,6 @@ Auto installed as package dependencies with django-storages[GOOGLE] to aid conne
 <br>
 
 ## Testing
-
-Unit tests in posts app
-
-![Post Tests](xxxx)
-
-The API's were tested locally during development but the core testing was done as part of the front end repos and testing to the real API's manually via form inputs and page loads.
-
-The results can be found in [Plant Parenthood](xxxx)
 
 **Validator Results**
 

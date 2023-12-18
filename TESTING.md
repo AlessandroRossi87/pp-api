@@ -1,10 +1,4 @@
-# Database Design
-
-The database design includes the originally planned "Requests" model and the "plant_children" and "requested_children" from the Plants model. These were excluded in the final version but retained in this README for reference to future implementation.
-
-![Database](https://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/database.png)
-
-# User Story Testing
+# Testing Website Features
 
 [Document can be viewed here](https://docs.google.com/spreadsheets/d/1Avdya5IaWtNDT0rXZPDBBcYJwow3CueCoUn-AFmWIbU/edit#gid=0)
 
