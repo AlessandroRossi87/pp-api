@@ -576,8 +576,11 @@ The following git commands were used throughout development to push code to the 
 <br>
 
 
+## Workspaces Unification
+
+
+
 ## Deployment
-## Heroku Deployment
 
 The site was deployed to Heroku after combining the two workspaces.
 
