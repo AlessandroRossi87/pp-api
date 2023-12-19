@@ -442,38 +442,6 @@ The font used for the website is "DM Sans", in case that is not available the sy
 <hr>
 <br>
 
-
-## Technologies
-
-- React: The main framework used for building the user interface. Version 17.0.2.
-- Node: A tool for managing package installations and dependencies. Used in the Node.js ecosystem.
-- Bootstrap: Front-end framework used for styling and UI components. Version 4.6.0.
-- React Bootstrap: A React-specific implementation of Bootstrap components. Version 1.6.3.
-- React Router DOM: A library for handling routing in React applications. Version 5.3.0.
-- Axios: A library for making HTTP requests. Version 0.21.4.
-- JWT Decode: A library for decoding JWT (JSON Web Tokens). Version 3.1.2.
-- React Infinite Scroll Component: A component for implementing infinite scrolling in React applications. Version 6.1.0.
-- React Scripts: Scripts and configurations used for building and running React applications. Version 4.0.3.
-
-<hr>
-<br>
-
-## Testing
-
-Testing can be found in the [TESTING.md file](https://github.com/AlessandroRossi87/pp-api/blob/main/TESTING.md)
-<hr>
-<br>
-
-
-
-
-# Plant Parenthood API
-
-Plant Parenthood API is the backend service used by the [Plant Parenthood Application](https://github.com/AlessandroRossi87/plant-parenthood). In order to ensure a smooth 
-<hr>
-<br>
-
-
 ## Database Design
 
 The database design includes the originally planned "Requests" model and the "plant_children" and "requested_children" from the Plants model. These were excluded in the final version but retained in this README for reference to future implementation.
@@ -487,6 +455,24 @@ A permissions class named IsOwnerOrReadOnly has been introduced to ensure that o
 
 ## Technologies
 
+* React
+    * The main framework used for building the user interface. Version 17.0.2.
+* Node
+    * A tool for managing package installations and dependencies. Used in the Node.js ecosystem.
+* Bootstrap
+    * Front-end framework used for styling and UI components. Version 4.6.0.
+* React Bootstrap
+    * A React-specific implementation of Bootstrap components. Version 1.6.3.
+* React Router DOM
+    * A library for handling routing in React applications. Version 5.3.0.
+* Axios
+    * A library for making HTTP requests. Version 0.21.4.
+* JWT Decode
+    * A library for decoding JWT (JSON Web Tokens). Version 3.1.2.
+* React Infinite Scroll Component
+    * A component for implementing infinite scrolling in React applications. Version 6.1.0.
+* React Scripts
+    * Scripts and configurations used for building and running React applications. Version 4.0.3.
 * Django
     * Main framework used for application creation
 * Django REST Framework
@@ -555,6 +541,10 @@ A permissions class named IsOwnerOrReadOnly has been introduced to ensure that o
 <br>
 
 ## Testing
+
+Testing can be found in the [TESTING.md file](https://github.com/AlessandroRossi87/pp-api/blob/main/TESTING.md)
+<hr>
+<br>
 
 **Validator Results**
 
@@ -660,37 +650,6 @@ Forks are typically employed either to suggest modifications to another person's
 <hr>
 <br>
 
-## Heroku Deployment
-
-The site was deployed to Heroku. The steps to deploy are as follows:
-
-* Navigate to heroku and create an account
-* Click the new button in the top right corner
-* Select create new app
-* Enter app name
-* Select region and click create app
-* Click the resources tab and search for Heroku Postgres
-* Select hobby dev and continue
-* Go to the settings tab and then click reveal config vars
-* Add the following config vars:
-  * SECRET_KEY: (Your secret key)
-  * DATABASE_URL: (This should already exist)
-  * ALLOWED_HOST:
-  * CLIENT_ORIGIN: url for the client front end react application that wil be making requests to these APIs
-  * CLIENT_ORIGIN_DEV: address of the local server used to preview and test UI during development of the front end client application
-  * GOOGLE_APPLICATION_CREDENTIALS:
-  * GOOGLE_CREDENTIALS: json file with authentication keys and tokens to access the google cloud bucket where images are stored
-  * GS_BUCKET_NAME: name of the bucket to upload images to.
-
-* Click the deploy tab
-* Scroll down to Connect to GitHub and sign in / authorize when prompted
-* In the search box, find the repositoy you want to deploy and click connect
-* Scroll down to Manual deploy and choose the main branch
-* Click deploy
-
-<hr>
-<br>
-
 ## Cloudinary Storage
 
 To set up bucket and service account. Please see - [Medium Article](https://medium.com/@mohammedabuiriban/how-to-use-google-cloud-storage-with-django-application-ff698f5a740f). The service account credentials will be needed for deployment.
@@ -766,9 +725,9 @@ Most commonly, forks are used to either propose changes to someone else's projec
 
 ### Content
 
-The project is based mainly on the "Moments" walkthrough by Code Institute.
-The contact model is taken from ![Twilio.com](https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid)
-All pictures uploaded are private property. 
+- The project is based mainly on the "Moments" walkthrough by Code Institute.
+- The contact model is taken from [Twilio.com](https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid)
+- All pictures uploaded are private property. 
 
 ### Acknowledgements
 
