@@ -34,7 +34,20 @@ Lighthouse testing revealed poor performance. While this was expected with a lar
 
 All directories underwent flake8 analysis, revealing several issues related to different factors such as excessive line lengths, white spaces, indentation, and docstring concerns.
 
-All identified issues were addressed, except for those associated with line lengths in migration files (auto-generated and left untouched) and the seemingly unmodifiable auth validator lines in the settings.py file, which are part of the framework code.
+All identified issues were addressed, except for those associated with line lengths in migration files (auto-generated and left untouched).
 
 A warning was flagged for env.py being imported but unused; however, it was disregarded since it is actively utilized in the development version.
 
+![Comments](xxxxxx)
+
+![Contact](xxxxxx)
+
+![Followers](xxxxxx)
+
+![Plants](xxxxxx)
+
+![pp-api](xxxxxx)
+
+![Profiles](xxxxxx)
+
+![Reactions](xxxxxx)
