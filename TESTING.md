@@ -52,9 +52,10 @@ A warning was flagged for env.py being imported but unused; however, it was disr
 
 ![Profiles](https://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/testprofiles.png)
 
-![Reactions](xhttps://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/testreactions.pngxxxxx)
+![Reactions](https://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/testreactions.png)
 
 ## CSS Validation
 
 All CSS files were validated and no errors were found.
 
+![W3C](https://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/W3Cvalidator.png)

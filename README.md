@@ -546,41 +546,26 @@ Testing can be found in the [TESTING.md file](https://github.com/AlessandroRossi
 <hr>
 <br>
 
-**Validator Results**
-
-All folders were run through flake8. XXXXX
-
-
 **Bugs and their fixes**
 
-XXXXX
+There was an error with the Plant images. The images were not rendering correctly on the front end. 
+
+![Bug]()
+
+I solved it by updating the link to Cloudinary, where the images are stored.
+
+![Solution]()
 
 <hr>
 <br>
 
 ## Deployment
 
-## Version Control
-
-The site was created using the Visual Studio Code editor and pushed to github to the remote repository ‘Gars-Steakhouse’.
-
-The following git commands were used throughout development to push code to the remote repo:
-
-```git add <file>``` - This command was used to add the file(s) to the staging area before they are committed.
-
-```git commit -m “commit message”``` - This command was used to commit changes to the local repository queue ready for the final step.
-
-```git push``` - This command was used to push all committed code to the remote repository on github.
-
-<hr>
-<br>
-
-
-## Workspaces Unification
+### Workspaces Unification
 
 
 
-## Deployment
+### Deployment
 
 The site was deployed to Heroku after combining the two workspaces.
 
