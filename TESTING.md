@@ -32,22 +32,29 @@ Lighthouse testing revealed poor performance. While this was expected with a lar
 
 # Validator Testing
 
+## Python Validation
+
 All directories underwent flake8 analysis, revealing several issues related to different factors such as excessive line lengths, white spaces, indentation, and docstring concerns.
 
 All identified issues were addressed, except for those associated with line lengths in migration files (auto-generated and left untouched).
 
 A warning was flagged for env.py being imported but unused; however, it was disregarded since it is actively utilized in the development version.
 
-![Comments](xxxxxx)
+![Comments](https://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/testcomments.png)
 
-![Contact](xxxxxx)
+![Contact](https://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/testcontact.png)
 
-![Followers](xxxxxx)
+![Followers](https://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/testfollowers.png)
 
-![Plants](xxxxxx)
+![Plants](https://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/testplants.png)
 
-![pp-api](xxxxxx)
+![pp-api](https://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/testppapi.png)
 
-![Profiles](xxxxxx)
+![Profiles](https://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/testprofiles.png)
 
-![Reactions](xxxxxx)
+![Reactions](xhttps://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/testreactions.pngxxxxx)
+
+## CSS Validation
+
+All CSS files were validated and no errors were found.
+
