@@ -550,11 +550,11 @@ Testing can be found in the [TESTING.md file](https://github.com/AlessandroRossi
 
 There was an error with the Plant images. The images were not rendering correctly on the front end. 
 
-![Bug]()
+![Bug](https://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/imagebug.png)
 
 I solved it by updating the link to Cloudinary, where the images are stored.
 
-![Solution]()
+![Solution](https://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/bugsolution.png)
 
 <hr>
 <br>
@@ -563,24 +563,37 @@ I solved it by updating the link to Cloudinary, where the images are stored.
 
 ### Workspaces Unification
 
+Originally, the Front End and the API were developed on two separate workspaces. The React workspace can be found [here](https://github.com/AlessandroRossi87/plant-parenthood). I then proceeded by copying the Front End into the API workspace doing as follows:
+
+* I went to the GitHub repository for the React project
+* I clicked the "Code" button, select the HTTPS tab, and copied the URL provided
+* I opened the workspace for my API project
+* I opened the terminal window and typed the command `git clone react_repo_url frontend` by adding the URL of the workspace
+* I removed unnecessary files from the frontend folder
+* I installed npm packages 
+* I added a new key to the JSON object inside package.json file
+* I modified the env.py file and removed CLIENT_ORIGIN_DEV, added new kews ALLOWED_HOST and CLIENT_ORIGIN
+* I removed CORS code
 
 
-### Deployment
+### Deployment of both applications
 
-The site was deployed to Heroku after combining the two workspaces.
+* I created a new empty folder called staticfiles in the root directly
+* In the TEMPLATES list at the DIRS key, I added code to tell Django and WhiteNOise where to look for Reacts index.html in deployment
+* I added the STATIC_ROOT and WHITENOISE_ROOT variables and values to tell Django and WHiteNoise where to look for the admin static files and React static files
+* I removed root_route view from the .views imports and imported the TemplateView from generic Django views
+* I removed the root_route code in the url_patterns list
+* I added `api/` at the beginning of all API URLs.
+* I set the axios.default.baseURL to `api/` in the axiosDefaults.js file
+* I collected the admin and API staticfiles to the empty staticfiles directory
+* I compiled and moved the React files into the frontend directory
+* I added a runtime.txt file to ensure Heroku uses the correct version of Python
+* I logged into my Heroku acount
+* I went to Settings and opened the Config vars
+* As ALLOWED_HOST key, I set the URL of the combined project without the `https://`
+* As CLIEN_ORIGIN key, I set the URL of the combined project
+* I clicked on the "Deploy" tab on Heroku and deployed by clicking on "Deploy Branch"
 
-* Go to Heroku and establish an account.
-* Press the "New" button located in the upper right corner.
-* Opt for "Create New App."
-* Input the desired app name.
-* Pick a region and initiate app creation.
-* Access the "Resources" tab and locate Heroku Postgres.
-* Choose "Hobby Dev" and proceed.
-* Move to the "Deploy" tab.
-* Navigate to "Connect to GitHub," and when prompted, sign in/authorize.
-* Within the search box, locate the repository for deployment and click on "Connect."
-* Scroll down to "Manual Deploy" and opt for the main branch.
-* Execute the deploy command.
 
 <hr>
 <br>
