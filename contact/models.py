@@ -12,4 +12,4 @@ class Contact(models.Model):
         ordering = ["-created_at"]
 
     def __str__(self):
-        return f"{self.owner} : {self.reason}"
+        return f"{self.owner} : {self.content}"
