@@ -20,9 +20,7 @@ The database design includes the originally planned "Requests" model and the "pl
 
 ## Security
 
-A permissions class was added called IsOwnerOrReadOnly to ensure only users who create the content are able to edit or delete it.
-
-GCP IAMS permissions for service account were added for create and read only to ensure minimum permissions needed were granted.
+A permissions class named IsOwnerOrReadOnly has been introduced to ensure that only users who have created the content are granted the ability to edit or delete it.
 
 ## Technologies
 
@@ -30,7 +28,7 @@ GCP IAMS permissions for service account were added for create and read only to 
     * Main framework used for application creation
 * Django REST Framework
     * Framework used for creating API
-* Google Cloud Platform
+* Cloudinary
     * Used for static image hosting
 * Heroku
     * Used for hosting the application
@@ -46,69 +44,49 @@ GCP IAMS permissions for service account were added for create and read only to 
 <details open>
 <summary> Details of packages </summary>
 
-* dj-database-url==1.0.0
+* asgiref==3.7.2
+    * ASGI specification (Asynchronous Server Gateway Interface)
+* cloudinary==1.36.0
+    * Cloudinary integration for image and video storage
+* dj-database-url==0.5.0
     * Used to parse the DATABASE_URL connection settings
-* dj-rest-auth==2.2.5
-    * Used with auth system
-* Django==4.1.1
+* dj-rest-auth==2.1.9
+    * Used with the authentication system
+* Django==3.2.23
     * Main framework used to start the project
-* django-allauth==0.50.0
+* django-allauth==0.44.0
     * Used for authentication
-* django-cors-headers==3.13.0
-    * Used for Cross-Origin Resource Sharing (CORS) headers to responses
-* django-filter==22.1
+* django-cloudinary-storage==0.3.0
+    * Cloudinary storage backend for Django
+* django-cors-headers==4.3.1
+    * Used for Cross-Origin Resource Sharing (CORS) headers in responses
+* django-filter==23.4
     * Used to filter API results in serializers
-* django-storages==1.13.1
-    * Used to help connect with the google cloud storage bucket
-* djangorestframework==3.13.1
-    * Framework used to build the API endpoints
-* djangorestframework-simplejwt==5.2.0
-    * Used with djange rest framework to create access tokens for authentication
-* gunicorn==20.1.0
+* djangorestframework==3.14.0
+    * Framework used to build API endpoints
+* djangorestframework-simplejwt==5.3.0
+    * Used with Django Rest Framework to create access tokens for authentication
+* gunicorn==21.2.0
     * Used for deployment of WSGI applications
-* Pillow==9.2.0
-    * Imaging Libray - used for image uploading
-* psycopg2==2.9.3
-    * PostgreSQL database adapter to allow deployed application to perform crud on the postgresql db
-* PyJWT==2.5.0
-    * For creating the Python Json Web Tokens for authentication
-
-Installed as package dependcies with above installations:
-* asgiref==3.5.2
-* autopep8==1.7.0
-* cachetools==5.2.0
-* certifi==2022.6.15.1
-* cffi==1.15.1
-* charset-normalizer==2.1.1
-* cryptography==38.0.1
-* defusedxml==0.7.1
-* idna==3.3
-* oauthlib==3.2.1
-* protobuf==4.21.5
-* pyasn1==0.4.8
-* pyasn1-modules==0.2.8
-* pycodestyle==2.9.1
-* pycparser==2.21
+* oauthlib==3.2.2
+    * Library for implementing OAuth 1.0 and OAuth 2.0 providers
+* Pillow==10.1.0
+    * Imaging Library - used for image uploading
+* psycopg2==2.9.9
+    * PostgreSQL database adapter to allow deployed application to perform CRUD on the PostgreSQL DB
+* PyJWT==2.8.0
+    * For creating Python JSON Web Tokens for authentication
 * python3-openid==3.2.0
-* pytz==2022.2.1
-* requests==2.28.1
+    * Python OpenID library
+* pytz==2023.3.post1
+    * World timezone definitions, modern and historical
 * requests-oauthlib==1.3.1
-* rsa==4.9
-* six==1.16.0
-* sqlparse==0.4.2
-* toml==0.10.2
-* types-cryptography==3.3.23
-* tzdata==2022.2
-* urllib3==1.26.12
+    * OAuthlib integration with Requests
+* sqlparse==0.4.4
+    * SQL parser for Python
+* whitenoise==6.4.0
+    * Simplifies serving of static files
 
-Auto installed as package dependencies with django-storages[GOOGLE] to aid connection to google cloud buckets for static image hosting:
-* google-api-core==2.10.0
-* google-auth==2.11.0
-* google-cloud-core==2.3.2
-* google-cloud-storage==2.5.0
-* google-crc32c==1.5.0
-* google-resumable-media==2.3.3
-* googleapis-common-protos==1.56.4
 </details>
 <hr>
 <br>
@@ -117,16 +95,12 @@ Auto installed as package dependencies with django-storages[GOOGLE] to aid conne
 
 **Validator Results**
 
-All folders were run through flake8. Several issues appeared with various reasons, lines too long, blank spaces, indentation and docstrings.
-
-All issues were resolved with the exception of lines too long in migration files (these are auto generated so I did not fix) and the auth validator lines in the settings.py which seem to be unbreakable but are framework code.
-
-A warning appeared for env.py being imported but unused although this is being used in the development version, so this was ignored.
+All folders were run through flake8. XXXXX
 
 
 **Bugs and their fixes**
 
-A bug occured causing a 500 error on post and profile form submissions. It was caused by GCP not accepting dulicate file names so to remedy this, I created a function to renamed the files before uploading with a uuid.
+XXXXX
 
 <hr>
 <br>
@@ -179,7 +153,7 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 <hr>
 <br>
 
-## Google Cloud Storage
+## Cloudinary Storage
 
 To set up bucket and service account. Please see - [Medium Article](https://medium.com/@mohammedabuiriban/how-to-use-google-cloud-storage-with-django-application-ff698f5a740f). The service account credentials will be needed for deployment.
 
