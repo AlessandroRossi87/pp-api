@@ -1,7 +1,5 @@
 from rest_framework import serializers
 from .models import Plant
-from reactions.models import Reaction
-from reactions.serializers import ReactionSerializer
 from PIL import Image
 
 

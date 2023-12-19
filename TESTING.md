@@ -28,7 +28,7 @@ The API testing was initially conducted locally in the development phase. Howeve
 
 Lighthouse testing revealed poor performance. While this was expected with a large number of images, it could be improved in the future by compressing images before uploading them. Unfortunately, I did not have time to implement this functionality in this iteration.
 
-![Lighthouse]()
+![Lighthouse](https://github.com/AlessandroRossi87/pp-api/blob/main/readmefiles/lighthouse.png)
 
 # Validator Testing
 

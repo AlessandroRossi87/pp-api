@@ -13,6 +13,7 @@ class ReactionList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+
 class ReactionDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = ReactionSerializer

@@ -28,6 +28,6 @@ class CommentSerializer(serializers.ModelSerializer):
             'plant', 'created_at', 'updated_at', 'content'
         ]
 
-    
+
 class CommentDetailSerializer(CommentSerializer):
     plant = serializers.ReadOnlyField(source='plant.id')

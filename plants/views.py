@@ -3,9 +3,7 @@ from rest_framework import generics, permissions, filters
 from django_filters.rest_framework import DjangoFilterBackend
 from pp_api.permissions import IsOwnerOrReadOnly
 from .models import Plant
-from reactions.models import Reaction
 from .serializers import PlantSerializer
-from reactions.serializers import ReactionSerializer
 from rest_framework.response import Response
 
 
@@ -51,6 +49,7 @@ class PlantDetail(generics.RetrieveUpdateDestroyAPIView):
         moist_count=Count('reactions', filter=Q(reactions__reaction_type=2)),
         dry_count=Count('reactions', filter=Q(reactions__reaction_type=3)),
     ).order_by('-created_at')
+
 
 class TaxonomyChoices(generics.CreateAPIView):
     def get(self, request, *args, **kwargs):
