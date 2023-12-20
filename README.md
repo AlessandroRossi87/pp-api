@@ -728,6 +728,8 @@ Most commonly, forks are used to either propose changes to someone else's projec
 
 - The project is based mainly on the "Moments" walkthrough by Code Institute.
 - The contact model is taken from [Twilio.com](https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid)
+- The Signup Image was taken from [bloomscape.com](https://bloomscape.com/plant-care/plant-parent-starter-pack-essentials-to-begin-your-houseplant-journey/)
+- The Signin Image was taken from [Chattanooga Times](https://wehco.media.clients.ellingtoncms.com/timesfreepress/img/photos/2022/01/20/img03243905832110_t800.jpeg?90232451fbcadccc64a17de7521d859a8f88077d)
 - All pictures uploaded are private property. 
 
 ### Acknowledgements
