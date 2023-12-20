@@ -1,6 +1,6 @@
 # Plant Parenthood
 
-Plant Parenthood is a social media platform for plant lovers. Users are able to share their plants, comment on each other plants.
+Plant Parenthood is a social media platform for plant lovers. Users are able to share their plants, comment on each other plants. Especially under the pandemics, there has been an exponential interest in apartment plants among millennials and you adults. This web application caters to the growing need of the plant enthusiast community to find a place where they can show off their plants, ask for advices and stay connected.
 <br>
 The live link can be found [here](https://plant-parenthood-pp5-ac00fe42de7c.herokuapp.com)
 <br>
@@ -654,33 +654,6 @@ Forks are typically employed either to suggest modifications to another person's
 <hr>
 <br>
 
-## Cloudinary Storage
-
-This project uses Cloudinary to storage the user's images. Please see this guide for setting up your own storage [Cloudinary Onboarding Guide](https://cloudinary.com/documentation/how_to_integrate_cloudinary#:~:text=You%20can%20sign%20up%20for%20Cloudinary%20using%20an%20email%20address,set%20your%20account%20as%20active.). The service account credentials will be needed for deployment.
-
-**Heroku**
-
-1. Log in to heroku and open the pp-api app
-2. Click settings
-3. Click Config vars
-4. Add the following variables:
-
-    * Key: CLOUDINARY_URL -  Value: URL to Cloudinary Assets folder.
-
-### Run Locally
-
-To clone the GitHub repository for local use, follow these steps:
-
-- Visit the GitHub Repository you intend to clone.
-- Click on the dropdown labeled "Code."
-- Select "HTTPS" from the options.
-- Copy the repository link to your clipboard.
-- Open your preferred Integrated Development Environment (IDE) (ensure Git is installed for the upcoming steps).
-- Type git clone followed by the copied repository URL into the IDE terminal.
-- Press Enter to initiate the cloning process on your local machine.
-
-Once the project is cloned, to run it, you'll need to create an env.py file and add the configuration variables as outlined in the Heroku steps above.
-
 
 **Virtual Environment setup** 
 
@@ -700,6 +673,21 @@ source venv/bin/activate \
 pip install -r requirements.txt
 ```
 
+
+## Cloudinary Storage
+
+This project uses Cloudinary to storage the user's images. Please see this guide for setting up your own storage [Cloudinary Onboarding Guide](https://cloudinary.com/documentation/how_to_integrate_cloudinary#:~:text=You%20can%20sign%20up%20for%20Cloudinary%20using%20an%20email%20address,set%20your%20account%20as%20active.). The service account credentials will be needed for deployment.
+
+**Heroku**
+
+1. Log in to heroku and open the pp-api app
+2. Click settings
+3. Click Config vars
+4. Add the following variables:
+
+    * Key: CLOUDINARY_URL -  Value: URL to Cloudinary Assets folder.
+
+
 ## Credits
 
 ### Content
@@ -713,4 +701,3 @@ pip install -r requirements.txt
 ### Acknowledgements
 
 I would like to thank my mentor, Gareth McGirr, for his invaluable support during this project.
-
