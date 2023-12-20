@@ -618,14 +618,17 @@ In order to push the changes to the repository I used the following commands:
 ### Run Locally
 
 
-Navigate to the GitHub repository you wish to clone for local use:
+To clone the GitHub repository you want to use locally, follow these steps:
 
-- Click on the dropdown button labeled "Code."
-- Select "HTTPS."
-- Copy the repository link to your clipboard.
-- Open your preferred integrated development environment (IDE) of choice (ensure that Git is installed for the upcoming - steps).
-- Type git clone copied-git-url into the terminal of your IDE.
-- The project is now cloned on your local machine and ready for use.
+- Go to the repository on GitHub.
+- Find the dropdown button named "Code."
+- Choose "HTTPS" from the options.
+- Copy the repository link.
+- Launch your favorite integrated development environment (IDE) and make sure Git is installed.
+- Open the terminal in your IDE.
+- Type git clone followed by the copied repository URL.
+- Press Enter to clone the project to your local machine.
+- Your local copy of the project is now set up and ready for use.
 
 Install Dependencies:
 
@@ -653,20 +656,7 @@ Forks are typically employed either to suggest modifications to another person's
 
 ## Cloudinary Storage
 
-To set up bucket and service account. Please see - [Medium Article](https://medium.com/@mohammedabuiriban/how-to-use-google-cloud-storage-with-django-application-ff698f5a740f). The service account credentials will be needed for deployment.
-
-**Code** 
-
-Packages needed for deployment:
-
-* django-storages[google]
-* Pillow
-
-Create a .profile file with the following line inside:
-
-```echo ${GOOGLE_CREDENTIALS} > /app/ga-creds.json```
-
-This line is used to instruct heroku that the GOOGLE_CREDENTIALS var is called ga-creds.json
+This project uses Cloudinary to storage the user's images. Please see this guide for setting up your own storage [Cloudinary Onboarding Guide](https://cloudinary.com/documentation/how_to_integrate_cloudinary#:~:text=You%20can%20sign%20up%20for%20Cloudinary%20using%20an%20email%20address,set%20your%20account%20as%20active.). The service account credentials will be needed for deployment.
 
 **Heroku**
 
@@ -675,23 +665,21 @@ This line is used to instruct heroku that the GOOGLE_CREDENTIALS var is called g
 3. Click Config vars
 4. Add the following variables:
 
-    * Key: GOOGLE_APPLICATION_CREDENTIALS -  Value: ga-creds.json
-    * Key: GOOGLE_CREDENTIALS - Value: json contents of the service account key
-    * Key: GS_BUCKET_NAME - Value: Name of the bucket where files are stored
+    * Key: CLOUDINARY_URL -  Value: URL to Cloudinary Assets folder.
 
 ### Run Locally
 
-Navigate to the GitHub Repository you want to clone to use locally:
+To clone the GitHub repository for local use, follow these steps:
 
-- Click on the code drop down button
-- Click on HTTPS
-- Copy the repository link to the clipboard
-- Open your IDE of choice (git must be installed for the next steps)
-- Type git clone copied-git-url into the IDE terminal
+- Visit the GitHub Repository you intend to clone.
+- Click on the dropdown labeled "Code."
+- Select "HTTPS" from the options.
+- Copy the repository link to your clipboard.
+- Open your preferred Integrated Development Environment (IDE) (ensure Git is installed for the upcoming steps).
+- Type git clone followed by the copied repository URL into the IDE terminal.
+- Press Enter to initiate the cloning process on your local machine.
 
-The project will now have been cloned on your local machine for use.
-
-In order to run, you will need to create an env.py file and add the config vars as used in heroku steps above.
+Once the project is cloned, to run it, you'll need to create an env.py file and add the configuration variables as outlined in the Heroku steps above.
 
 
 **Virtual Environment setup** 
@@ -711,16 +699,6 @@ python -m venv venv \
 source venv/bin/activate \
 pip install -r requirements.txt
 ```
-
-### Forking
-
-Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
-
-- Navigate to the GitHub Repository you want to fork.
-
-- On the top right of the page under the header, click the fork button.
-
-- This will create a duplicate of the full project in your GitHub Repository.
 
 ## Credits
 
