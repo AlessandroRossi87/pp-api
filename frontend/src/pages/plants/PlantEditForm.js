@@ -74,7 +74,7 @@ function PlantEditForm() {
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       const selectedImage = event.target.files[0];
-      // URL.revokeObjectURL(image);
+      URL.revokeObjectURL(image);
       setPlantData({
         ...plantData,
         image: URL.createObjectURL(selectedImage),
