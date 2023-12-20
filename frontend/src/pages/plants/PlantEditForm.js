@@ -173,7 +173,7 @@ function PlantEditForm() {
           >
             <Form.Group className="text-center">
                   <figure>
-                    <Image className={appStyles.Image} src={image} rounded />
+                    <Image className={appStyles.Image} src={`https://res.cloudinary.com/dg6tnws5o/${image}`} rounded />
                   </figure>
                   <div>
                     <Form.Label
