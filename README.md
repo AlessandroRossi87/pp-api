@@ -1,6 +1,6 @@
 # Plant Parenthood
 
-Plant Parenthood is a social media platform for plant lovers. Users are able to share their plants, comment on each other plants. Especially under the pandemics, there has been an exponential interest in apartment plants among millennials and you adults. This web application caters to the growing need of the plant enthusiast community to find a place where they can show off their plants, ask for advices and stay connected.
+Plant Parenthood is a social media platform for plant lovers. Users are able to share their plants, comment on each other's plants. Especially under the pandemic, there has been an exponential interest in apartment plants among millennials and young adults. This web application caters to the growing need of the plant enthusiast community to find a place where they can show off their plants, ask for advice, and stay connected. 
 <br>
 The live link can be found [here](https://plant-parenthood-pp5-ac00fe42de7c.herokuapp.com)
 <br>
